@@ -35,3 +35,26 @@ const ExpenseTracker = () => {
     (acc, transaction) => acc + transaction.income - transaction.expense,
     0
   );
+
+  return (
+    <div>
+      <h2>Expense Tracker</h2>
+      <div>
+        <label htmlFor="income">Income: </label>
+        <input
+          type="number"
+          id="income"
+          value={income}
+          onChange={handleIncomeChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="expense">Expense: </label>
+        <input
+          type="number"
+          id="expense"
+          value={expense}
+          onChange={handleExpenseChange}
+        />
+      </div>
+      
