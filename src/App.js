@@ -23,3 +23,15 @@ const ExpenseTracker = () => {
     setIncome(0);
     setExpense(0);
   };
+
+  const handleDeleteTransaction = (id) => {
+    const updatedTransactions = transactions.filter(
+      (transaction) => transaction.id !== id
+    );
+    setTransactions(updatedTransactions);
+  };
+
+  const totalBalance = transactions.reduce(
+    (acc, transaction) => acc + transaction.income - transaction.expense,
+    0
+  );
