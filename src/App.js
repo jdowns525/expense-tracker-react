@@ -57,4 +57,21 @@ const ExpenseTracker = () => {
           onChange={handleExpenseChange}
         />
       </div>
-      
+      <button onClick={handleAddTransaction}>Add Transaction</button>
+      <h3>Transactions:</h3>
+      <ul>
+        {transactions.map((transaction) => (
+          <li key={transaction.id}>
+            Income: {transaction.income}, Expense: {transaction.expense}{' '}
+            <button onClick={() => handleDeleteTransaction(transaction.id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+      <h3>Total Balance: {totalBalance}</h3>
+    </div>
+  );
+};
+
+export default ExpenseTracker;
